@@ -3,7 +3,7 @@ package entities;
 public abstract class Dados {
 	
 	private String nome;
-	private double rendaAnual;
+	protected double rendaAnual;
 	
 	public Dados(String nome, double rendaAnual) {
 		this.nome = nome;
