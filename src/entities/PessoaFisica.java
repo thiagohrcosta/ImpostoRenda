@@ -1,34 +1,37 @@
 package entities;
 
-public class PessoaFisica extends Dados {
+public class PessoaFisica extends Dados  {
 	
 	private double gastoComSaude;
 		
+
 	public PessoaFisica(String nome, double rendaAnual, double gastoComSaude) {
 		super(nome, rendaAnual);
 		this.gastoComSaude = gastoComSaude;
 	}
 
-	public double calcImposto() {
-		if (rendaAnual < 20000.00 ) {
-			return rendaAnual * 0.15;
-		}
-		else{
-			return rendaAnual * 0.25;
-		}
-		
-		
-	}
 	
-	public double gastoSaude() {
-		if (gastoComSaude > 0) {
-			return gastoComSaude * 0.5;
-		}
-		else {
-			return 0;
-		}
+	public double getGastoComSaude() {
+		return gastoComSaude;
 	}
 
+	public void setGastoComSaude(double gastoComSaude) {
+		this.gastoComSaude = gastoComSaude;
+	}
+
+
+	@Override
+	public double imposto() {
+		if(getRendaAnual() < 20000) {
+			return getRendaAnual() * 0.15 - gastoComSaude * 0.5;			
+		}
+		else{
+			return getRendaAnual() * 0.25 - gastoComSaude * 0.5;			
+		}
+		
+
+	}
+	
 
 
 }

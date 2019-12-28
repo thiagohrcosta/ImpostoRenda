@@ -26,6 +26,7 @@ public abstract class Dados {
 		this.rendaAnual = rendaAnual;
 	}
 	
-		
+
+	public abstract double imposto();	
 
 }

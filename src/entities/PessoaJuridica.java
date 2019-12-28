@@ -16,6 +16,16 @@ public class PessoaJuridica extends Dados{
 	public void setNumeroFuncionarios(int numeroFuncionarios) {
 		this.numeroFuncionarios = numeroFuncionarios;
 	}
+
+	@Override
+	public double imposto() {
+		if(getNumeroFuncionarios() < 10) {
+			return getRendaAnual() * 0.16;			
+		}
+		else{
+			return getRendaAnual() * 0.14;			
+		}
+	}
 	
 	
 
