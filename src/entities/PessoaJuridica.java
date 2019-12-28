@@ -19,7 +19,7 @@ public class PessoaJuridica extends Dados{
 
 	@Override
 	public double imposto() {
-		if(getNumeroFuncionarios() < 10) {
+		if(getNumeroFuncionarios() <= 10) {
 			return getRendaAnual() * 0.16;			
 		}
 		else{
